@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <>
-      <button onClick={onLogoutClick}></button>
+      <button onClick={onLogoutClick}>Log out</button>
     </>
   );
 };
