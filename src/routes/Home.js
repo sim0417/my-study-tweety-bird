@@ -1,24 +1,12 @@
 import { dbService } from "fbManager";
 import React, { useState, useEffect } from "react";
+import Tweety from "components/Tweety";
 
 const Home = ({ userObj }) => {
   const [tweety, setTweety] = useState();
   const [tweetys, setTweetys] = useState([]);
 
-  // const loadTweetys = async () => {
-  //   const collection = await dbService.collection("tweety").get();
-  //   collection.forEach((doc) => {
-  //     const tweetyObject = {
-  //       ...doc.data(),
-  //       id: doc.id,
-  //     };
-  //     setTweetys((prev) => [tweetyObject, ...prev]);
-  //   });
-  // };
-
-  useEffect(() => {
-    // loadTweetys();
-
+  const loadTweetys = () => {
     dbService.collection("tweety").onSnapshot((snapshot) => {
       const tweetyArray = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -26,6 +14,10 @@ const Home = ({ userObj }) => {
       }));
       setTweetys(tweetyArray);
     });
+  };
+
+  useEffect(() => {
+    loadTweetys();
   }, []);
 
   const onSubmit = async (event) => {
@@ -46,9 +38,6 @@ const Home = ({ userObj }) => {
     setTweety(value);
   };
 
-  // console.log(tweetys);
-  // console.log(userObj);
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -64,9 +53,7 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {tweetys.map((data) => (
-          <div key={data.id}>
-            <h4>{data.text}</h4>
-          </div>
+          <Tweety key={data.id} tweetyObj={data} isOwner={data.createId === userObj.uid} />
         ))}
       </div>
     </div>
