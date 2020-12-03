@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dbService } from "fbManager";
+import { dbService, storageService } from "fbManager";
 
 const Tweety = ({ tweetyObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -8,6 +8,7 @@ const Tweety = ({ tweetyObj, isOwner }) => {
     const confirm = window.confirm("Are you sure you want to delete this Tweety?");
     if (confirm) {
       await dbService.doc(`tweety/${tweetyObj.id}`).delete();
+      await storageService.refFromURL(tweetyObj.attachmentUrl).delete();
     }
   };
 
@@ -47,6 +48,9 @@ const Tweety = ({ tweetyObj, isOwner }) => {
       ) : (
         <>
           <h4>{tweetyObj.text}</h4>
+          {tweetyObj.attachmentUrl && (
+            <img src={tweetyObj.attachmentUrl} width="100px" height="100px" />
+          )}
           {isOwner && (
             <>
               <button onClick={onDeleteClick}>Delete</button>

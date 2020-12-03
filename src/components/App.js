@@ -15,12 +15,7 @@ function App() {
     });
   }, []);
 
-  return (
-    <>
-      {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "Initalizing..."}
-      <footer>&copy; {new Date().getFullYear()} Tweety Bird</footer>
-    </>
-  );
+  return <>{init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "Initalizing..."}</>;
 }
 
 export default App;
