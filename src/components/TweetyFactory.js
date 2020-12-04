@@ -52,7 +52,10 @@ const TweetyFactory = ({ userObj }) => {
       } = finishedEvent;
       setAttachment(result);
     };
-    reader.readAsDataURL(fileData);
+
+    if (Boolean(fileData)) {
+      reader.readAsDataURL(fileData);
+    }
   };
 
   const onClearAttachment = () => setAttachment("");

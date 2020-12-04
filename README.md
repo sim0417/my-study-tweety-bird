@@ -6,9 +6,9 @@ Learning Firebase by cloning Twitter mini version.
 
 - Log-in Page
 
-  - sign-in
+  - Sign-in
   - Create account
-  - login-with Google & Github account
+  - Login-with Google & Github account
 
 - Main Page
 

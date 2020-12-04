@@ -99,7 +99,7 @@ form {
   margin-top: 50px;
 }
 
-/* Nwitter Factory */
+/* Tweety Factory */
 
 .factoryForm {
   display: flex;
@@ -139,6 +139,7 @@ form {
   text-align: center;
   border-radius: 20px;
   color: white;
+  box-sizing: border-box;
 }
 
 .factoryInput__label {
@@ -174,7 +175,7 @@ form {
   font-size: 12px;
 }
 
-/* tweety */
+/* Tweety */
 
 .tweetyEdit .formBtn {
   cursor: pointer;
@@ -183,7 +184,7 @@ form {
 }
 
 .tweety {
-  margin-bottom: 35px;
+  margin-bottom: 38px;
   background-color: white;
   width: 100%;
   max-width: 320px;
@@ -263,14 +264,16 @@ form {
   margin-bottom: 10px;
   font-size: 12px;
   color: black;
+  box-sizing: content-box;
 }
 
 .authSubmit {
   text-align: center;
   background: #04aaff;
   color: white;
-  margin-top: 10;
+  margin-top: 10px;
   cursor: pointer;
+  box-sizing: content-box;
 }
 
 .authError {

@@ -30,29 +30,31 @@ const Profile = ({ userObj, refreshUser }) => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={onSubmit} className="profileForm">
-        <input
-          type="text"
-          placeholder="New Display name"
-          onChange={onChange}
-          value={newDisplayName}
-          required
-          autoFocus
-          className="formInput"
-        />
-        <input
-          type="submit"
-          value="Update Profile"
-          className="formBtn"
-          style={{
-            marginTop: 10,
-          }}
-        />
-      </form>
-      <span onClick={onLogoutClick} className="formBtn cancelBtn logOut">
-        Log out
-      </span>
+    <div className="switchRouters">
+      <div className="container">
+        <form onSubmit={onSubmit} className="profileForm">
+          <input
+            type="text"
+            placeholder="New Display name"
+            onChange={onChange}
+            value={newDisplayName}
+            required
+            autoFocus
+            className="formInput"
+          />
+          <input
+            type="submit"
+            value="Update Profile"
+            className="formBtn"
+            style={{
+              marginTop: 10,
+            }}
+          />
+        </form>
+        <span onClick={onLogoutClick} className="formBtn cancelBtn logOut">
+          Log out
+        </span>
+      </div>
     </div>
   );
 };
