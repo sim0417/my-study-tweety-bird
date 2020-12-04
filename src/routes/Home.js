@@ -20,9 +20,9 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <TweetyFactory userObj={userObj} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {tweetys.map((data) => (
           <Tweety key={data.id} tweetyObj={data} isOwner={data.createId === userObj.uid} />
         ))}

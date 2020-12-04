@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { dbService, storageService } from "fbManager";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Tweety = ({ tweetyObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -30,10 +32,10 @@ const Tweety = ({ tweetyObj, isOwner }) => {
   };
 
   return (
-    <div>
+    <div className="tweety">
       {editing ? (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="container tweetyEdit">
             <input
               type="text"
               placeholder="Edit your Tweety"
@@ -41,21 +43,25 @@ const Tweety = ({ tweetyObj, isOwner }) => {
               onChange={onChange}
               required
             />
-            <input type="submit" value="Update Tweety" />
+            <input type="submit" value="Update Tweety" className="formBtn" />
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
+          <span onClick={toggleEditing} className="formBtn cancelBtn">
+            Cancel
+          </span>
         </>
       ) : (
         <>
           <h4>{tweetyObj.text}</h4>
-          {tweetyObj.attachmentUrl && (
-            <img src={tweetyObj.attachmentUrl} width="100px" height="100px" />
-          )}
+          {tweetyObj.attachmentUrl && <img src={tweetyObj.attachmentUrl} />}
           {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>Delete</button>
-              <button onClick={toggleEditing}>Edit</button>
-            </>
+            <div className="tweety__actions">
+              <span onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
+              <span onClick={toggleEditing}>
+                <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
+            </div>
           )}
         </>
       )}
