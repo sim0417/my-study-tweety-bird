@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/my-study-tweety-bird/static/css/main.c2007b20.chunk.css",
-    "main.js": "/my-study-tweety-bird/static/js/main.46ed8e94.chunk.js",
-    "main.js.map": "/my-study-tweety-bird/static/js/main.46ed8e94.chunk.js.map",
+    "main.css": "/my-study-tweety-bird/static/css/main.8fe8037f.chunk.css",
+    "main.js": "/my-study-tweety-bird/static/js/main.d215e061.chunk.js",
+    "main.js.map": "/my-study-tweety-bird/static/js/main.d215e061.chunk.js.map",
     "runtime-main.js": "/my-study-tweety-bird/static/js/runtime-main.9e11f5cd.js",
     "runtime-main.js.map": "/my-study-tweety-bird/static/js/runtime-main.9e11f5cd.js.map",
     "static/js/2.698f8ef3.chunk.js": "/my-study-tweety-bird/static/js/2.698f8ef3.chunk.js",
     "static/js/2.698f8ef3.chunk.js.map": "/my-study-tweety-bird/static/js/2.698f8ef3.chunk.js.map",
     "index.html": "/my-study-tweety-bird/index.html",
-    "static/css/main.c2007b20.chunk.css.map": "/my-study-tweety-bird/static/css/main.c2007b20.chunk.css.map",
+    "static/css/main.8fe8037f.chunk.css.map": "/my-study-tweety-bird/static/css/main.8fe8037f.chunk.css.map",
     "static/js/2.698f8ef3.chunk.js.LICENSE.txt": "/my-study-tweety-bird/static/js/2.698f8ef3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9e11f5cd.js",
     "static/js/2.698f8ef3.chunk.js",
-    "static/css/main.c2007b20.chunk.css",
-    "static/js/main.46ed8e94.chunk.js"
+    "static/css/main.8fe8037f.chunk.css",
+    "static/js/main.d215e061.chunk.js"
   ]
 }
